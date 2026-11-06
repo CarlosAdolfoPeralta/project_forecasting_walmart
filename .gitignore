@@ -1,0 +1,28 @@
+# Datos descargados y cachés (pesados; se regeneran)
+data/
+
+# Modelos entrenados
+models/
+*.keras
+*.h5
+*.pkl
+*.parquet
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editores y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

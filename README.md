@@ -2,6 +2,8 @@
 
 Proyecto de Data Science sobre el dataset de la competencia **M5 Forecasting – Accuracy** (ventas diarias de Walmart). Se pronostica la demanda a 28 días de una muestra de 600 series y se comparan, con las mismas reglas de evaluación, modelos de complejidad creciente: baselines simples, un modelo estadístico (suavizado exponencial con índice semanal), LightGBM y una red neuronal en Keras.
 
+**Autor:** Carlos Adolfo Peralta · [LinkedIn](https://www.linkedin.com/in/carlosperalta1993/) · [GitHub](https://github.com/CarlosAdolfoPeralta)
+
 La pregunta del proyecto no es "¿gana el deep learning?", sino **¿qué tanto mejora cada modelo más complejo y esa mejora es mayor que el ruido?** La respuesta, con intervalos de confianza, está en el [notebook 04](notebooks/04_red_neuronal_comparacion.ipynb).
 
 ## Resultado principal

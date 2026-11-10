@@ -14,7 +14,7 @@ from .metrics import first_sale_index
 def ventanas(T, horizonte=28):
     """Las dos últimas ventanas de `horizonte` días: (primer día, último día), con días desde 1."""
     return {
-        "validación": (T - 2 * horizonte + 1, T - horizonte),
+        "validation": (T - 2 * horizonte + 1, T - horizonte),
         "test": (T - horizonte + 1, T),
     }
 
@@ -38,10 +38,10 @@ def clasificar_demanda(Y):
             cv2[i] = (nz.std() / nz.mean()) ** 2
     tipo = np.select(
         [np.isnan(adi), (adi < 1.32) & (cv2 < 0.49), adi < 1.32, cv2 < 0.49],
-        ["sin ventas", "suave", "errática", "intermitente"],
+        ["no sales", "smooth", "erratic", "intermittent"],
         default="irregular",
     )
-    return pd.DataFrame({"inicio": inicio, "adi": adi, "cv2": cv2, "tipo": tipo})
+    return pd.DataFrame({"start": inicio, "adi": adi, "cv2": cv2, "type": tipo})
 
 
 # ----------------------------------------------------------------------------- baselines
@@ -168,7 +168,7 @@ def guardar_resultados(df, ruta):
     if os.path.exists(ruta):
         previo = pd.read_csv(ruta)
         df = pd.concat([previo, df], ignore_index=True)
-    df = df.drop_duplicates(subset=["modelo", "ventana"], keep="last")
+    df = df.drop_duplicates(subset=["model", "window"], keep="last")
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
     df.to_csv(ruta, index=False)
     return df

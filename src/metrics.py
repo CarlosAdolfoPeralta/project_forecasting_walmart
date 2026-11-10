@@ -44,6 +44,6 @@ def evaluar(y_train, y_true, y_pred):
     return {
         "RMSSE": float(np.nanmean(r)),
         "MAE": mae(y_true, y_pred),
-        "series_validas": int(np.isfinite(r).sum()),
-        "series_totales": int(len(r)),
+        "valid_series": int(np.isfinite(r).sum()),
+        "total_series": int(len(r)),
     }
